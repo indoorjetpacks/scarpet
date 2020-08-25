@@ -42,7 +42,11 @@ global_item_to_block = m (
 
 							l ('oak_sign', 'oak_wall_sign'),
 
-							l ('spruce_sign', 'spruce_wall_sign')
+							l ('spruce_sign', 'spruce_wall_sign'),
+
+							l ('warped_sign', 'warped_wall_sign'),
+
+							l ('crimson_sign', 'crimson_wall_sign'),
 
 						);
 
@@ -89,7 +93,6 @@ __on_player_right_clicks_block(player, item_tuple, hand, block, face, hitvec) ->
 					( has(replaceable_materials:(material(offset_by_one))), 
 
 						set(offset_by_one, global_item_to_block:(item_tuple:0), 'facing', face); 
-						inventory_set(player,hand,count-1);// cos it wont remove properly
 
 					)
 
@@ -98,4 +101,3 @@ __on_player_right_clicks_block(player, item_tuple, hand, block, face, hitvec) ->
 	);
 
 );
-
